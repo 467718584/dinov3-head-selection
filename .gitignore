@@ -1,0 +1,83 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+profile_default/
+
+# Model weights (downloaded at build time, NOT in git)
+04_data/models/**/*.pth
+04_data/models/**/*.pt
+04_data/models/**/*.bin
+
+# Feature cache (15.8 GB, mirrored on Zenodo)
+04_data/feature_cache/**/*.pt
+04_data/feature_cache/**/*.h5
+experiments/cache/
+
+# Raw datasets (large, public download)
+04_data/datasets/NEU-DET/raw/
+04_data/datasets/MVTec-AD/raw/
+04_data/datasets/Crack500/raw/
+
+# Build artifacts
+build_temp/
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.toc
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Local environment
+.env.local
+*.log
+
+# Camera-ready backups (preserved in versions/ subdir)
+paper/TIM_paper_v28.4.2.pdf.bak
+paper/TIM_paper_v28.4.2.pdf.v2bak
+
+# Coverage reports
+*.coverage
+coverage.xml

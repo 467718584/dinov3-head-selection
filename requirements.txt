@@ -1,0 +1,36 @@
+# Pinned dependencies for P-001 DINOv3 Head Selection (v28.4.2 camera-ready)
+# Reproducibility: install with `pip install -r requirements.txt`
+# Tested on Python 3.12.3 + CUDA 12.1 on RTX 5070 Ti (16 GB VRAM)
+
+# Core deep learning
+torch==2.1.0+cu121
+torchvision==0.16.0+cu121
+# CRITICAL: timm version pinned to reproduce the 51%-weight-drop headline finding
+# Earlier versions (≤ 0.9.x) silently drop RoPE + storage tokens
+timm==0.6.12
+transformers==4.35.0
+
+# Data + I/O
+numpy==1.26.4
+pandas==2.1.4
+pillow==10.2.0
+h5py==3.10.0          # 25,372 .pt feature cache storage
+tqdm==4.66.1
+
+# Datasets
+scikit-learn==1.3.2
+scipy==1.11.4
+
+# Visualization
+matplotlib==3.8.2
+seaborn==0.13.0
+# tikz/pgfplots for LaTeX figure regeneration (Fig 1, Fig 4)
+# pip install pgfplots  # requires system LaTeX install (TeX Live or MiKTeX)
+
+# Conformance testing (for RegTTA 4-Stage Honest Negative-Ablation Protocol)
+pytest==7.4.4
+hypothesis==6.92.1
+
+# Code quality (optional, for contributors)
+black==23.11.0
+ruff==0.1.5

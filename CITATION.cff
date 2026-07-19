@@ -1,0 +1,67 @@
+cff-version: 1.2.0
+message: |
+  If you use this code or data in your research, please cite the v28.4.2 camera-ready paper:
+  Zhang Zhenyi, Xu Xitao, Wei Ziqiang (2025).
+  "DINOv3 Head Selection for Few-Shot Industrial Defect Detection: An Empirical Study."
+  IEEE Transactions on Industrial Informatics (TII).
+title: "DINOv3 Head Selection for Few-Shot Industrial Defect Detection: An Empirical Study"
+version: v28.4.2
+date-released: 2026-07-26
+license: Apache-2.0
+license-url: https://www.apache.org/licenses/LICENSE-2.0
+repository-code: https://github.com/467718584/dinov3-head-selection
+repository: https://github.com/467718584/dinov3-head-selection
+
+authors:
+  - family-names: Zhang
+    given-names: Zhenyi
+    email: Z467718583@126.com
+    affiliation: "NARI Nanjing Water Conservancy and Hydropower Technology Co., Ltd. (国电南瑞南京水利水电科技有限公司), Department of Digital Intelligence R&D"
+    orcid: https://orcid.org/0000-0000-0000-0000
+  - family-names: Xu
+    given-names: Xitao
+    affiliation: "NARI Nanjing Water Conservancy and Hydropower Technology Co., Ltd."
+  - family-names: Wei
+    given-names: Ziqiang
+    affiliation: "NARI Nanjing Water Conservancy and Hydropower Technology Co., Ltd."
+
+keywords:
+  - DINOv3
+  - industrial defect detection
+  - few-shot learning
+  - memory bank
+  - position-equivariant
+  - negative ablation
+  - honest-disclosure protocol
+
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.XXXXXXX
+    description: Zenodo feature cache DOI
+  - type: arxiv
+    value: 2607.XXXXX
+    description: arXiv preprint ID (cs.CV primary)
+
+references:
+  - type: article
+    title: "DINOv3 Head Selection for Few-Shot Industrial Defect Detection: An Empirical Study"
+    authors:
+      - family-names: Zhang
+        given-names: Zhenyi
+      - family-names: Xu
+        given-names: Xitao
+      - family-names: Wei
+        given-names: Ziqiang
+    journal: "IEEE Transactions on Industrial Informatics"
+    year: 2025
+    volume: "XX"
+    pages: "1-13"
+    date: 2026-07-26
+  - type: software
+    title: "AgentLink Protocol v0.2 — Companion Reference Implementation"
+    authors:
+      - family-names: Zhang
+        given-names: Zhenyi
+    repository: "https://github.com/467718584/agentlink"
+    version: v0.2.0
+    date-released: 2026-07-26
