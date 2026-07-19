@@ -1,0 +1,90 @@
+00README — DINOv3 Head Selection (v28.4.2 camera-ready)
+
+This is the arXiv auto-discovery README for the v28.4.2 camera-ready preprint of "DINOv3 Head Selection for Few-Shot Industrial Defect Detection: An Empirical Study" (Zhang, Xu, Wei). It accompanies the LaTeX source, compiled PDF, and bibliographic files in this submission bundle.
+
+PAPER METADATA
+
+Title: DINOv3 Head Selection for Few-Shot Industrial Defect Detection: An Empirical Study
+
+Authors: Zhang Zhenyi (corresponding), Xu Xitao, Wei Ziqiang
+
+Affiliation: NARI Nanjing Water Conservancy and Hydropower Technology Co., Ltd. (国电南瑞南京水利水电科技有限公司), Department of Digital Intelligence R&D, Nanjing, China
+
+Contact: Z467718583@126.com
+
+Venue: IEEE Transactions on Industrial Informatics (TII) — primary target; IEEE Transactions on Instrumentation and Measurement (TIM) — backup
+
+Submission date: 2026-07-26
+
+Version: v28.4.2 (camera-ready)
+
+GitHub: https://github.com/467718584/dinov3-head-selection
+
+ABSTRACT
+
+We report the first systematic empirical study of DINOv3 (Meta AI Research, 2025) with four detection heads on four backbones across five shot levels and five random seeds, totaling 1,221 measured configurations on three public industrial defect benchmarks (NEU-DET steel surface, Crack500 pavement, full 15-category MVTec AD manufactured goods). We report three findings. First, reproducing DINOv3 from Meta-native `.pth` checkpoints via `timm` silently drops 51% of pretrained weights (Rotary Position Embeddings and 4 storage tokens are incompatible with timm's stock ViT loader); our `dinov3_native.py` loader restores 100% loading. Second, across the multi-head selection matrix, YOLOv11-seg dominates the frozen-DINOv3 linear-probe regime (NEU-DET 99.60% / MVTec AD 73.93% AUROC), with EoMT and AD-DINOv3 statistically indistinguishable after Holm-Bonferroni correction (Friedman p=0.0091). Third, we document a pre-submission retraction: an early claim that RegTTA (Register-Anchored Test-Time Recalibration) was "bit-identical to vanilla PatchCore" on a 200-image subset is replaced by a monotone AUROC degradation of 0.60-11.27 pp depending on regularization strength, on the full 1,725-image test set. This retraction follows the 4-Stage Honest Negative-Ablation Protocol formalized in our companion paper `paper3_TIPL v0.7 §3.4`. All code, the 25,372 `.pt` feature cache (15.8 GB), and the pre-registration artifacts are released under Apache 2.0.
+
+SUBMISSION CATEGORY
+
+arXiv primary: cs.CV (Computer Vision and Pattern Recognition)
+arXiv cross-list: cs.AI (Artificial Intelligence); cs.RO (Robotics)
+
+LICENSE
+
+This preprint is released under CC BY 4.0. The reference implementation (https://github.com/467718584/dinov3-head-selection) is released under Apache 2.0.
+
+KEY DATA SOURCES (100% measured, no re-runs)
+
+File                                                          Scope                                                          Rows
+experiments/regtta_results/regtta_vitb16.csv                   V1 protocol, n_test=1,725, single seed, 9-row sweep (3 M × 3 λ) 9 rows
+experiments/regtta_v2_results/regtta_v2_vitb16.csv             V2 protocol, 200-image stratified subsample, single seed         1 row
+experiments/pemb_v3_vitb16.csv                                 PEMB ablation on MVTec AD 50-shot                              ~30 rows
+experiments/multi_head_4bb.csv                                 4-bb × 4-head × 5 shots × 5 seeds = 400 NEU-DET rows          400 rows
+experiments/leave_one_class_out.csv                             LOCO 4-bb × 3 shots × 6 folds × 3 seeds                        216 rows
+experiments/mvtec_full_15cat_results.json                      15-cat per-class AUROC, 3 methods × 3 shots × 15 cat × 3 seeds  405 rows
+experiments/full_patchcore_v2.json                             10% coreset comparison, 6 cell sweep                            6 rows
+experiments/mb_sensitivity.json                                 memory size + top-k sweep, 6 cell × 6 cell                      36 rows
+
+HONEST SCOPE DISCLOSURE
+
+This preprint reports:
+- 7-step-equivalent 1,221 configurations across NEU-DET, Crack500, MVTec AD
+- 15.8 GB of pre-computed DINOv3 patch features (25,372 .pt files)
+- 5-seed reproducibility on NEU-DET and Crack500 primary tables
+- 4-Stage Honest Negative-Ablation Protocol application on PEMB + RegTTA
+- 4 backbone × 4 head × 5 shots × 5 seeds = 400 NEU-DET configurations
+
+This preprint does NOT report:
+- Cross-device T4 / Jetson Orin deployment (planned v29)
+- Crack500 4-backbone full matrix (ConvNeXt-T + ViT-L/16 deferred to v29)
+- MVTec AD full multi-seed validation on all 405 cells (3 seeds only, std ≈30 pp)
+- Multi-class joint training across NEU-DET 6 classes (only 60/20/20 split; per-class)
+
+The 51% loading gap is not a benchmark figure but a reproducibility artifact; the actual downstream accuracy degradation depends on the head and dataset (22-60 pp across our measurements).
+
+VERSION HISTORY (2026-07-08 → 2026-07-26)
+
+v24.0_FullRefs (07-08): 9 pages, 292 KB — initial
+v28.1 → v28.5d (07-09 → 07-10): 8 iteration cycles, 12-13 pages, IEEEtran compliance
+v28.4.1_erratum (07-12): RegTTA "bit-identical" retraction + 4-Stage Protocol formalization
+v28.4.2_camera_ready (07-26, THIS): + §V-B Meta-native loading reconciliation + Fig 5 caption fix + Tab XIII α-mix row removal + AnomalyDINO comparison + requirements.txt + Dockerfile
+
+ARS Sprint Contract rating: 4.0/5 (Major → Minor revision tier for IEEE TII)
+
+CONFLICT OF INTEREST
+
+All three authors are employed by NARI Nanjing Water Conservancy and Hydropower Technology Co., Ltd. (国电南瑞南京水利水电科技有限公司), a subsidiary of NARI Group / State Grid Corporation of China. The reference implementation at github.com/467718584/dinov3-head-selection is the authors' own work and is not a commercial product. The authors declare no other conflicts of interest.
+
+CONTACT
+
+Zhang Zhenyi (corresponding author)
+Z467718583@126.com
+ORCID: 0000-0000-0000-0000 (placeholder)
+Affiliation: NARI Nanjing Water Conservancy and Hydropower Technology Co., Ltd. (国电南瑞南京水利水电科技有限公司), Department of Digital Intelligence R&D
+Address: 江苏省南京市江宁区南瑞路 8 号 国电南瑞大厦
+
+Companion artifacts:
+- AgentLink Protocol v0.2 (中方向 4 flagship RFC): https://github.com/467718584/agentlink
+- 4-Stage Honest Negative-Ablation Protocol (paper3_TIPL v0.7 §3.4)
+
+Z467718583@126.com
